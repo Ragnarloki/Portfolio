@@ -1,4 +1,4 @@
-import HeroImg from '../assets/obito.webp';
+import HeroImg from '../assets/siva.jpg';
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineDownload } from "react-icons/ai";
 import { motion } from 'framer-motion';
 
@@ -47,12 +47,12 @@ export default function Hero() {
 
             {/* Image Section */}
             <motion.div 
-                className='md:ml-40  md:w-1/3 w-72 h-72 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-300 relative z-10'
+                className='md:ml-40  md:w-1/3 w-72 h-[500px] rounded-full overflow-hidden shadow-2xl border-4 border-yellow-300 relative z-10'
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1 }}
             >
-                <img src={HeroImg} className='w-full h-full object-cover' alt='Profile' />
+                <img src={HeroImg} className='w-full  h-full object-fit' alt='Profile' />
             </motion.div>
         </section>
     );
