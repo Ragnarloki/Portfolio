@@ -51,8 +51,8 @@ export default function Projects() {
                             className="h-[200px] w-full object-cover"
                         />
 
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {/* Hover Overlay for Desktop */}
+                        <div className="hidden md:flex absolute inset-0 bg-black bg-opacity-60 flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <p className="text-white text-lg font-semibold mb-3">{project.description}</p>
                             <a 
                                 href={project.link} 
@@ -61,6 +61,18 @@ export default function Projects() {
                                 className="px-5 py-2 bg-secondary text-black font-bold rounded-lg hover:bg-opacity-80 transition"
                             >
                                 View Project
+                            </a>
+                        </div>
+
+                        {/* Project Name & Clickable Link for Mobile */}
+                        <div className="md:hidden text-center py-3">
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-lg font-semibold text-primary hover:underline"
+                            >
+                                {project.description}
                             </a>
                         </div>
                     </motion.div>
