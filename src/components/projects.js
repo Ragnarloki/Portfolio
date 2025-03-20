@@ -2,8 +2,18 @@ import { motion } from 'framer-motion';
 import Img1 from '../assets/Recipe.png';
 import Img2 from '../assets/workout.png';
 import Img3 from '../assets/weather.png';
-
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { useEffect } from 'react';
 export default function Projects() {
+    useEffect(() => {
+        AOS.init({
+          duration: 15000, // Animation duration in milliseconds
+          offset: 100, // Offset in px before animation triggers
+          easing: "ease-in-out", // Type of animation easing
+          once: false, // Whether animation should happen only once
+        });
+      }, []);
     const projects = [
         {
             image: Img1,
@@ -34,15 +44,14 @@ export default function Projects() {
             </motion.div>
 
             {/* Project Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 " >
                 {projects.map((project, index) => (
-                    <motion.div 
+                    <div 
                         key={index} 
                         className="relative group bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"
-                        whileHover={{ scale: 1.05 }}
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: index * 0.2 }}
+                        
+                        data-aos-delay="300"
+                        data-aos="fade-zoom-in"
                     >
                         {/* Project Image */}
                         <img 
@@ -75,7 +84,7 @@ export default function Projects() {
                                 {project.description}
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

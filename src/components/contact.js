@@ -1,9 +1,21 @@
 import { motion } from 'framer-motion';
 import { AiOutlineMail, AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
 import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
+import Aos from 'aos';
+  
+import "aos/dist/aos.css";
 export default function Contact() {
+
+     useEffect(() => {
+            Aos.init({
+                duration: 1000, // Animation duration in milliseconds
+                offset: 100, // Offset in px before animation triggers
+                easing: "ease-in-out", // Type of animation easing
+                once: false // Animation triggers only once per scroll
+            });
+        }, []);
+
     const formRef = useRef();
     const [isSent, setIsSent] = useState(false);
 
@@ -75,9 +87,9 @@ export default function Contact() {
             {/* Contact Form Section */}
             <motion.div 
                 className='flex flex-col items-center mt-10 md:mt-0 md:w-1/2'
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
+                
+                data-aos-delay="300"
+                data-aos="fade-left-right"
             >
                 <h2 className='text-3xl font-extrabold mb-5'>Send me a message</h2>
                 <motion.form 
