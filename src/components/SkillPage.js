@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaJava } from "react-icons/fa";
 import {
   SiHtml5,
@@ -19,8 +19,6 @@ import {
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { MdWebhook } from "react-icons/md";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const skills = [
   {
@@ -65,36 +63,31 @@ const skills = [
 ];
 
 const SkillsShowcase = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: false });
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-100 flex flex-col items-center py-10 px-5">
+    <div className=" bg-gradient-to-br from-purple-50 to-blue-100 p-4">
       {/* Section Title */}
-      <h1 className="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-purple-500 pb-2">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">
         My Skills
       </h1>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
         {skills.map((category, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-5 border-t-4 border-purple-400 hover:border-blue-400 transition-all duration-300"
-            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow"
           >
-            <h2 className="text-xl font-semibold text-purple-700 mb-4">
+            <h2 className="text-lg font-semibold text-purple-700 mb-3">
               {category.category}
             </h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {category.items.map((skill, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center p-3 bg-gray-50 rounded-lg hover:bg-purple-100 transition-all duration-200 shadow-sm"
+                  className="flex flex-col items-center p-2 bg-gray-50 rounded-md hover:bg-purple-50 transition-colors"
                 >
-                  <div className="text-4xl text-purple-600">{skill.icon}</div>
-                  <p className="text-sm font-medium mt-2 text-gray-700">
+                  <div className="text-3xl text-purple-600">{skill.icon}</div>
+                  <p className="text-xs sm:text-sm font-medium mt-1 text-gray-700 text-center">
                     {skill.name}
                   </p>
                 </div>
@@ -105,8 +98,8 @@ const SkillsShowcase = () => {
       </div>
 
       {/* Additional Features */}
-      <div className="mt-10 text-center">
-        <p className="text-gray-600 mb-4">
+      <div className="mt-8 text-center">
+        <p className="text-gray-600">
           Want to see more? Check out my{" "}
           <a
             href="https://github.com/Ragnarloki"
@@ -118,7 +111,6 @@ const SkillsShowcase = () => {
           </a>{" "}
           for additional projects and skills.
         </p>
-        
       </div>
     </div>
   );

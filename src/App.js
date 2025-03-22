@@ -8,7 +8,7 @@ import Projects from './components/projects';
 import SkillPage from './components/SkillPage';
 function App() {
   return (
-    <div className="App">
+    <div >
      <Header/>
      <Hero/>
      <About/>

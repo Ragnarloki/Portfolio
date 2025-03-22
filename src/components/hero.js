@@ -1,4 +1,4 @@
-import HeroImg from '../assets/siva.jpg';
+import HeroImg from '../assets/heroImg.png';
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineDownload } from "react-icons/ai";
 import { motion } from 'framer-motion';
 import AOS from "aos";
@@ -72,8 +72,8 @@ export default function Hero() {
 
             {/* Image Section */}
             <div 
-                className='h-[300px] md:ml-40 md:w-[400px] md:h-[400px] w-72 rounded-full overflow-hidden shadow-[0_0_40px_10px_rgba(45,212,191,0.3)] relative z-10'
-               
+                className='h-[300px] md:ml-40 md:w-[400px] md:h-[400px] w-72 rounded-full overflow-hidden shadow-[0_0_40px_10px_rgba(45,212,191,0.3)] relative z-8'
+                        
                 data-aos="fade-left"
                 data-aos-delay="300"
             >
