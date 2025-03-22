@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Img1 from '../assets/Recipe.png';
 import Img2 from '../assets/workout.png';
 import Img3 from '../assets/weather.png';
+import Img4 from '../assets/PhotframeShop.png';
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from 'react';
@@ -25,14 +26,21 @@ export default function Projects() {
             description: 'Fitness Tracker',
             link: 'https://ragnarloki.github.io/workout_now/',
         },
+        
+        {
+            image: Img4,
+            description: 'Photoframe Shop',
+            link: 'https://thittani-photoframe.onrender.com/',
+        },
         {
             image: Img3,
             description: 'Weather App',
             link: 'https://ragnarloki.github.io/weather_api/',
-        }
+        },
+
     ];
     return (
-        <section id="projects" className="flex flex-col items-center py-20 px-5 bg-secondary text-black">
+        <section id="projects" className="flex flex-col items-center  py-20 px-5 bg-secondary text-black">
             {/* Section Title with Animation */}
             <motion.div 
                 initial={{ opacity: 0, y: -20 }}
