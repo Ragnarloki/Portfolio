@@ -30,7 +30,7 @@ export default function Header() {
         isScrolled
           ? "bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg"
           : "bg-gradient-to-r from-gray-800 to-gray-900"
-      } text-white z-50 transition-all duration-300 border-b-2 border-transparent hover:border-green-400`}
+      } text-white z-40 transition-all duration-300 border-b-2 border-transparent hover:border-green-400`}
     >
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo with Animation */}
