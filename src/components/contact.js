@@ -120,7 +120,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Contact Form Section */}
-            <motion.div className="flex flex-col items-center mt-10 md:mt-0 md:w-1/2" data-aos-delay="300" data-aos="fade-left">
+            <motion.div className="flex flex-col items-center mt-10 md:mt-0 md:w-1/2" data-aos-delay="300" data-aos="fade-zoom">
                 <h2 className="text-3xl font-extrabold mb-5">Send me a message</h2>
                 <motion.form
                     ref={formRef}
